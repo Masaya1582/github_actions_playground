@@ -1,11 +1,10 @@
-name: Registered Environment Variables
+name: Secret Variables
 on: push
-env:
-  EXAMPLE: Defined by workflow level
 jobs:
   print:
     runs-on: ubuntu-latest
     env:
-      USERNAME: ${{ vars.USERNAME }} # Repoに登録した環境変数の参照
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - run: echo "${USERNAME}"
+      - run: echo "${PASSWORD}" # 出力はマスクされる
+      - run: echo "${PASSWORD:0:1} ${PASSWORD#?}" # 出力はマスクされない
