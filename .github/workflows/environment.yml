@@ -1,4 +1,4 @@
-name: Intermediate environment variables
+name: Registered Environment Variables
 on: push
 env:
   EXAMPLE: Defined by workflow level
@@ -6,6 +6,6 @@ jobs:
   print:
     runs-on: ubuntu-latest
     env:
-      ACTOR: ${{ github.actor }}
+      USERNAME: ${{ vars.USERNAME }} # Repoに登録した環境変数の参照
     steps:
-      - run: echo "${ACTOR}"
+      - run: echo "${USERNAME}"
