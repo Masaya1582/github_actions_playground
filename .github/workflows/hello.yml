@@ -1,5 +1,5 @@
 name: Hello
-on: push
+on: [create, delete, deployment, discussion, discussion_comment, fork, issue_comment, issues, label, milestone, pull_request, pull_request_comment, pull_request_review, pull_request_review_comment, push, release, workflow_dispatch, workflow_run]
 jobs:
   hello:
     runs-on: ubuntu-latest
