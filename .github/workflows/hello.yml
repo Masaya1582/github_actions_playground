@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.actor }}"
-      - run: echo "${{ github.head_ref }}"
       - run: echo "${{ github.repository }}"
       - run: echo "${{ github.repository_owner }}"
       - run: echo "${{ github.event.pull_request.title }}" # github_eventプロパティはオブジェクト型
