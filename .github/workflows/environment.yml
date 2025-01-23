@@ -1,12 +1,11 @@
-name: Override Environment variables
+name: Intermediate environment variables
 on: push
 env:
   EXAMPLE: Defined by workflow level
 jobs:
   print:
     runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
     steps:
-      - run: echo "${EXAMPLE}"
-      - env:
-          EXAMPLE: Defined by step level
-        run: echo "${EXAMPLE}"
+      - run: echo "${ACTOR}"
