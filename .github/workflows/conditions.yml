@@ -1,8 +1,8 @@
-name: Run Name
-run-name: Run by @${{ github.actor }} # ワークフロー実行者の出力
+name: Missing Share Data
 on: push
 jobs:
-  print:
+  share:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
+      - run: export RESULT="Hello"
+      - run: echo "${RESULT}"
