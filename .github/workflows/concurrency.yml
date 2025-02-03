@@ -1,6 +1,6 @@
 name: Concurrency
 on: push
-concurrency: ${{ github.workflow }} # Concorrencyグループへワークフローを指定
+concurrency: ${{ github.workflow }} # Concorrencyグループへワークフローを指定する
 jobs:
   sleep:
     runs-on: ubuntu-latest
