@@ -1,11 +1,11 @@
-> Globの記述例
+## Globの記述例
 - ``` go/*.go (goディレクトリ直下で拡張子がgoのファイル) ```
 - ``` go/**/*.go (サブディレクトリを含めた、goディレクトリ配下の全goファイル) ```
 - ``` .github/*.ya?ml (.githubディレクトリ直下で、拡張子がymlまたはyamlのファイル) ```
 - ```!README.md (README.mdを除外)```
 
-> アクティビティタイプの例
-- Issueの場合
+## アクティビティタイプの例
+### Issueの場合
 ``` 
 on: 
   issues:
@@ -13,14 +13,14 @@ on:
 ```
 **タイプを省略するとIssueの全イベントがトリガーになる**
 
-- Pull Requestの場合
+## Pull Requestの場合
 ``` 
 on: 
   pull_request:
     types: [opened, synchronize, reopened]
 ```
 
-> 主要言語のセットアップ記法
+## 主要言語のセットアップ記法
 - Node.js
 ``` 
 - uses: actions/setup-node@v4
@@ -54,7 +54,7 @@ on:
     bundler-cache: true # Boolでcacheを制御
 ```
 
-> バージョンファイル
+## バージョンファイル
 - GOの例
 ```
 - uses: actions/setup_go@v5
@@ -62,10 +62,18 @@ on:
     go-version-file: ./main.go # バージョンファイルのPATHを入れる
 ```
 
-> サポートされてるシェル
+## サポートされてるシェル (Ubuntu, macOSは省略時はBashが起動)
 - bash (Ubuntu, macOS, Windows)
 - python (Ubuntu, macOS, Windows)
 - pwsh (Ubuntu, macOS, Windows)
 - sh (Ubuntu, macOS)
 - cmd (Windows)
 - powershell (Windows)
+
+**Bashを明示するとpipefailオプションを有効化できるので明示するのが吉**
+### デフォルトシェル
+``` 
+defaults:
+  run:
+    shell: bash # ワークフローで使うシェルをまとめて指定する、機械的に追加しておくのが吉
+```
