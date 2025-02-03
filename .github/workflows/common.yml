@@ -1,13 +1,12 @@
-name: Comment
-on: pull_request
+name: Change Shell
+on: push
 jobs:
-  comment:
+  print:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_ACTOR}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}} # or ${{ github.token }}を使用、どちらも同じ
+      - shell: bash
+      - run: echo "${SHELL}"
+      - shell: python
+        run: |
+          import os
+          print(os.environ['PATH'])
