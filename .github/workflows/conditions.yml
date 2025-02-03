@@ -1,8 +1,11 @@
-name: Missing Share Data
+name: GITHUB_OUTPUT
 on: push
 jobs:
   share:
     runs-on: ubuntu-latest
     steps:
-      - run: export RESULT="Hello"
-      - run: echo "${RESULT}"
+      - id: source # ステップID
+        run: echo "result=Hello" >> "${GITHUB_OUTPUT}" # GITHUB_OUTPUTへ書き出し
+      - env:
+          RESULT: ${{ steps.source.outputs.result }} # stepコンテキストから参照
+        run: echo "${RESULT}"
