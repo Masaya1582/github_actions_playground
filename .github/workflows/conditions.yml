@@ -1,8 +1,9 @@
-name: Conditions
+name: Status Check Functions
 on: push
 jobs:
-  skip-or-run:
+  fail:
     runs-on: ubuntu-latest
     steps:
+      - run: exit 1 # 終了ステータスを意図的にエラーにする
       - run: echo "Hello"
-        if: ${{ contains(github.run_id, '1') }} # ワークフローIDに1が含まれれば実行
+        if: ${{ failure() }} # failure()をつけて実行させる
