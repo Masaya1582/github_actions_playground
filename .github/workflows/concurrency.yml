@@ -2,7 +2,7 @@ name: Auto Cancel
 on: pull_request
 concurrency: 
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true # 同一グループのワークフローが実行中ならキャンセルする
+  cancel-in-progress: true # 同一グループのワークフローが実行中ならキャンセルするよ
 jobs:
   sleep:
     runs-on: ubuntu-latest
