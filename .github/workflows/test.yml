@@ -11,9 +11,3 @@ jobs:
         with:
           go-version: '1.22'
       - run: go test go/excellent/*.go # テスト実行
-
-# Globの記述例
-# go/*.go (goディレクトリ直下で拡張子がgoのファイル)
-# go/**/*.go (サブディレクトリを含めた、goディレクトリ配下の全goファイル)
-# .github/*.ya?ml (.githubディレクトリ直下で、拡張子がymlまたはyamlのファイル)
-# !README.md (README.mdを除外)
