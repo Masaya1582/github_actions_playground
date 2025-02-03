@@ -77,3 +77,11 @@ defaults:
   run:
     shell: bash # ワークフローで使うシェルをまとめて指定する、機械的に追加しておくのが吉
 ```
+
+## Concurrency
+実行中の古いワークフローを自動キャンんセル
+```
+concurrency: 
+  group: <Concurrencyグループ>
+  cancel-in-progress: true 
+```
