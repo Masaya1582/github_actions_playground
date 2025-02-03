@@ -77,3 +77,10 @@ defaults:
   run:
     shell: bash # ワークフローで使うシェルをまとめて指定する、機械的に追加しておくのが吉
 ```
+
+## アノテーション
+```
+::error::<message>
+::warning::<message>
+::notice::<message>
+```
