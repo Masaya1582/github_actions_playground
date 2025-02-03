@@ -19,3 +19,44 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 ```
+
+> 主要言語のセットアップ記法
+- Node.js
+``` 
+- uses: actions/setup-node@v4
+  with: 
+    node-version: '20'
+    cache: npm # キャッシュの有効化 (npm使用の場合、yarnやpnpmとかも)
+```
+
+- Python
+``` 
+- uses: actions/setup-python@v5
+  with: 
+    python-version: '3.12'
+    cache: pip # キャッシュの有効化 (他pipenv, poetryなど)
+```
+
+- Java
+``` 
+- uses: actions/setup-java@v5
+  with: 
+    distribution: temurin
+    java-version: '21'
+    cache: gradle # キャッシュの有効化 (他maven, sbtなど)
+```
+
+- Ruby
+``` 
+- uses: actions/setup-ruby@v5
+  with: 
+    ruby-version: '3.3.0'
+    bundler-cache: true # Boolでcacheを制御
+```
+
+> バージョンファイル
+- GOの例
+```
+- uses: actions/setup_go@v5
+  with: 
+    go-version-file: ./main.go # バージョンファイルのPATHを入れる
