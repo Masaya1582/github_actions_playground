@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Amazing Script # ステップ名の指定
-      - run: echo "Hello"
+        run: echo "Hello"
