@@ -1,7 +1,10 @@
-name: Debug log
+name: Bash Tracing
 on: push
 jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "::debug::This is a debug log"
+      - run: | # Bashのトレーシングオプションを有効化して、実行コマンドをログ出力
+          set -x
+          date
+          hostname
