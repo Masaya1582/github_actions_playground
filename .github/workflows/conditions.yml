@@ -1,9 +1,8 @@
-name: Status Check Functions
+name: Conditions Workflow
 on: push
 jobs:
-  fail:
+  skip-or-run:
+    if: ${{ github.actor == 'Masaya1582' }}
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1 # 終了ステータスを意図的にエラーにする
       - run: echo "Hello"
-        if: ${{ failure() }} # failure()をつけて実行させる
