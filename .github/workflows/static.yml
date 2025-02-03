@@ -11,8 +11,8 @@ concurrency: # 自動キャンセル
 jobs:
   lint:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # タイムアウト設定
+    timeout-minutes: 6 # タイムアウト設定
     steps:
       - uses: actions/checkout@v4
       - run: | # 静的解析実行
-          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint: latest
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
