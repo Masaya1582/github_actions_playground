@@ -60,3 +60,12 @@ on:
 - uses: actions/setup_go@v5
   with: 
     go-version-file: ./main.go # バージョンファイルのPATHを入れる
+```
+
+> サポートされてるシェル
+- bash (Ubuntu, macOS, Windows)
+- python (Ubuntu, macOS, Windows)
+- pwsh (Ubuntu, macOS, Windows)
+- sh (Ubuntu, macOS)
+- cmd (Windows)
+- powershell (Windows)
