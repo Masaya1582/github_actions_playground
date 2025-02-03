@@ -1,6 +1,7 @@
-name: Concurrency
-on: push
-concurrency: ${{ github.workflow }} # Concorrencyグループへワークフローを指定する
+name: Auto Cancel
+on: pull_request
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+cancel-in-progress: true # 同一グループのワークフローが実行中ならキャンセル
 jobs:
   sleep:
     runs-on: ubuntu-latest
