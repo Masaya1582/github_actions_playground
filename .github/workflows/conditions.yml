@@ -1,9 +1,8 @@
-name: Naming
+name: Run Name
+run-name: Run by @${{ github.actor }} # ワークフロー実行者の出力
 on: push
 jobs:
   print:
-    name: Super Useful Job # ジョブ名の指定
     runs-on: ubuntu-latest
     steps:
-      - name: Amazing Script # ステップ名の指定
         run: echo "Hello"
