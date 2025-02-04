@@ -97,3 +97,12 @@ key: node-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 restore-keys: |
   node-${{ runner.os }}-
 ```
+
+### Actionsのキャッシュの仕様
+- 7日以上アクセスされていないキャッシュは自動削除
+- キャッシュの合計サイズは各リポジトリで10GBまで
+
+``` 
+actions/cache/save # キャッシュの保存だけ行う
+actions/cache/restore # キャッシュの復元だけ行う
+```
