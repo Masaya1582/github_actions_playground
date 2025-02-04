@@ -84,3 +84,16 @@ defaults:
 ::warning::<message>
 ::notice::<message>
 ```
+
+## キャッシュキーの設計
+- プラットフォームごとに異なるキャッシュを利用する
+``` 
+key: example-${{ runner.os }}-${{ runner.arch }}
+```
+
+- 依存関係を更新した時だけキャッシュも変更する
+```
+key: node-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+restore-keys: |
+  node-${{ runner.os }}-
+```
