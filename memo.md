@@ -125,3 +125,7 @@ actions/cache/restore # キャッシュの復元だけ行う
 ## LICENSE
 - パプリックREPOには置くのが吉
 - MIT License, Apache License 2.0を選択しておけばOK
+
+## 依存関係
+- なにもしてないのに壊れたを防がなければならない
+- 変更し続けることが大事
