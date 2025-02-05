@@ -146,3 +146,24 @@ ignore:
           - version-update:semver-major # 除外するバージョンアップの種類
 ```
 除外項目は最低限に、コメントも可能な限り残すこと
+- Dependabotは通常のSecretsは参照できず、Dependabot専用のSecretsを参照する
+- バージョンアップする依存関係のメタデータを取得できる
+
+## 自動マージ
+```
+name: Auto Merge
+on: pull_request
+jobs:
+  merge:
+    if: ${{ github.actor == 'dependabot[bot]' }} # DependabotのPRのみ
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB CLIのクレデンシャル
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr merge "${GITHUB_HEAD_REF}" --squash --auto # CLIでmergeする (merge, rebase, squashの3タイプから運用に合わせて)
+```
+- --autoで全ワークフローの実行完了を待つ
