@@ -167,3 +167,16 @@ jobs:
       - run: gh pr merge "${GITHUB_HEAD_REF}" --squash --auto # CLIでmergeする (merge, rebase, squashの3タイプから運用に合わせて)
 ```
 - --autoで全ワークフローの実行完了を待つ
+
+``` 
+steps:
+      - uses: actions/checkout@v4
+      - id: meta
+        uses: dependabot/fetch-metadata@v2
+      - if: ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' }}
+        run: |
+          gh pr review "${GITHUB_HEAD_REF}" --approve
+          gh pr merge "${GITHUB_HEAD_REF}" --squash --auto
+```
+パッチバージョン変更はバグ修正とかなので破壊的変更はほぼないので自動マージヨシとかの判断基準
+Github Actions向けの変更は自動マージなど
