@@ -129,3 +129,20 @@ actions/cache/restore # キャッシュの復元だけ行う
 ## 依存関係
 - なにもしてないのに壊れたを防がなければならない
 - 変更し続けることが大事
+
+## Dependabot
+- package-ecosystem: パッケージマネージャやツールの識別子を指定、swiftも加納
+- schedule: daily, weekly, monthlyの3つ、基本はdailyでOK
+- @dependabot merge, close, recreateでDependabotを操作できる、PR内で
+
+```
+ignore: 
+      - dependency-name: actions/upload-artifact # 除外する依存関係の名前
+        versions: 
+          - 4.3.0
+          - 4.3.1
+      - dependency-name: 'actions/*' # アスタリスクは任意文字列にマッチ
+        update-types:
+          - version-update:semver-major # 除外するバージョンアップの種類
+```
+除外項目は最低限に、コメントも可能な限り残すこと
