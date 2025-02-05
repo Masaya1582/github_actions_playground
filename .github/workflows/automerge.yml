@@ -1,0 +1,16 @@
+name: Auto Merge
+on: pull_request
+jobs:
+  merge:
+    if: ${{ github.actor == 'dependabot[bot]' }} # DependabotのPRのみ
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB CLIのクレデンシャル
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          gh pr review "${GITHUB_HEAD_REF}" --approve
+          gh pr merge "${GITHUB_HEAD_REF}" --squash --auto # CLIでmergeする (merge, rebase, squashの3タイプから運用に合わせて)
