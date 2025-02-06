@@ -1,0 +1,9 @@
+changelog:
+  categories:
+    - title: Enhancement # リリースノートへEnhancementというカテゴリを作成
+      labels:
+        - enhancement # PRのラベル指定
+    - title: Bug Fixes
+      labels:
+        - bug
+        - fixes
