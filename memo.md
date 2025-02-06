@@ -218,3 +218,21 @@ gh release create v0.1.0 --title "v0.1.0" --notes "Wonderful Text"
 gh release upload v0.1.0 example.txt   
 ```
 アップロードファイル
+
+```
+changelog:
+  categories:
+    - title: Enhancement # リリースノートへEnhancementというカテゴリを作成
+      labels:
+        - enhancement # PRのラベル指定
+    - title: Bug Fixes
+      labels:
+        - bug
+        - fixes
+  exclude:
+    labels:
+      - dependencies
+    authors:
+      - dependabot
+```
+除外設定
