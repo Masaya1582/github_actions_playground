@@ -209,3 +209,12 @@ git log v1.1.0..v1.2.0
 
 ## Github Releases
 Tagと連携して2GBまでの任意ファイルをアップロード可能
+
+```
+gh release create v0.1.0 --title "v0.1.0" --notes "Wonderful Text"
+```
+リリースファイルの作成が可能
+```
+gh release upload v0.1.0 example.txt   
+```
+アップロードファイル
