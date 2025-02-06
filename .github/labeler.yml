@@ -1,6 +1,6 @@
 enhancement:
-  - head-branch: ["^feat"]
+  - feature/*
 bug:
-  - head-branch: ["^fix"]
+  - fix/*
 refactor:
-  - head-branch: ["^refactor"]
+  - refactor/*
