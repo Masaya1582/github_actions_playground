@@ -1,4 +1,4 @@
 # .github/labeler.yml
 
-feature/*:
-  - enhancement
+enhancement:
+- feature/*
