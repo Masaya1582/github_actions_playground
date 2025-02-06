@@ -1,4 +1,10 @@
-# .github/labeler.yml
-
 enhancement:
-- feature/*
+  - head-branch: ['^feat']
+bug:
+  - head-branch: ['^fix']
+chore:
+  - head-branch: ['^chore']
+refactor:
+  - head-branch: ['^refactor']
+document:
+  - head-branch: ['^doc']
