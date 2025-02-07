@@ -219,6 +219,7 @@ gh release upload v0.1.0 example.txt
 ```
 アップロードファイル
 
+### 除外設定
 ```
 changelog:
   categories:
@@ -235,7 +236,6 @@ changelog:
     authors:
       - dependabot
 ```
-除外設定
 
 ## ラベルの自動付与
 ```
