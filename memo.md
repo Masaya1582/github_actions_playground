@@ -279,4 +279,4 @@ permissions:
 短命、必要なタイミングで都度払い出してすぐ失効する。
 Github Actionsではクラウドプロバイダの一時クレデンシャルを利用可能、それがOpenID Connectというプロトコル
 
-fuga
+fugahoge
