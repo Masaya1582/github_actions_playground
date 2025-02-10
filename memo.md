@@ -255,3 +255,16 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
 ```
+
+## Gitタグのバージョニング
+```
+push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+' # v1.2.3のようなGitタグがPushされたら起動させる
+```
+
+リリースノートの作成にはcontentsスコープの書き込み権限が必要なので以下を追加
+``` 
+permissions:
+  contents: write
+```
